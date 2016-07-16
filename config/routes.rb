@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   get '/capture', to: 'capture#index'
 
+  resources :expense_sources
+  resources :income_sources
+  resources :expense_items
+  resources :income_items
+
 end
