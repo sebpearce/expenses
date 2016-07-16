@@ -62,19 +62,19 @@ p "Created #{IncomeSource.count} income sources."
 ExpenseItem.destroy_all
 
 expense_items = [
-  [DateTime.new(2015, 6, 22), 3205],
-  [DateTime.new(2015, 6, 22), 1200],
-  [DateTime.new(2015, 6, 22), 200],
-  [DateTime.new(2015, 6, 23), 2400],
-  [DateTime.new(2015, 6, 24), 1200],
-  [DateTime.new(2015, 6, 25), 250],
-  [DateTime.new(2015, 6, 26), 470],
-  [DateTime.new(2015, 6, 26), 409],
-  [DateTime.new(2015, 6, 26), 500],
-  [DateTime.new(2015, 6, 27), 550],
-  [DateTime.new(2015, 6, 27), 1052],
-  [DateTime.new(2015, 6, 28), 905],
-  [DateTime.new(2015, 6, 28), 399],
+  [DateTime.new(2016, 6, 22), 3205],
+  [DateTime.new(2016, 6, 22), 1200],
+  [DateTime.new(2016, 6, 22), 200],
+  [DateTime.new(2016, 6, 23), 2400],
+  [DateTime.new(2016, 6, 24), 1200],
+  [DateTime.new(2016, 6, 25), 250],
+  [DateTime.new(2016, 6, 26), 470],
+  [DateTime.new(2016, 6, 26), 409],
+  [DateTime.new(2016, 6, 26), 500],
+  [DateTime.new(2016, 6, 27), 550],
+  [DateTime.new(2016, 6, 27), 1052],
+  [DateTime.new(2016, 6, 28), 905],
+  [DateTime.new(2016, 6, 28), 399],
 ]
 
 expense_items.each do |date, amount|
@@ -88,9 +88,9 @@ p "Created #{ExpenseItem.count} expense items."
 IncomeItem.destroy_all
 
 income_items = [
-  [DateTime.new(2015, 6, 12), 100000],
-  [DateTime.new(2015, 6, 18), 400000],
-  [DateTime.new(2015, 6, 25), 50000],
+  [DateTime.new(2016, 6, 12), 100000],
+  [DateTime.new(2016, 6, 18), 400000],
+  [DateTime.new(2016, 6, 25), 50000],
 ]
 
 income_items.each do |date, amount|
