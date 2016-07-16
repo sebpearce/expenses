@@ -62,23 +62,23 @@ p "Created #{IncomeSource.count} income sources."
 ExpenseItem.destroy_all
 
 expense_items = [
-  [DateTime.new(2016, 6, 22), 3205],
-  [DateTime.new(2016, 6, 22), 1200],
-  [DateTime.new(2016, 6, 22), 200],
-  [DateTime.new(2016, 6, 23), 2400],
-  [DateTime.new(2016, 6, 24), 1200],
-  [DateTime.new(2016, 6, 25), 250],
-  [DateTime.new(2016, 6, 26), 470],
-  [DateTime.new(2016, 6, 26), 409],
-  [DateTime.new(2016, 6, 26), 500],
-  [DateTime.new(2016, 6, 27), 550],
-  [DateTime.new(2016, 6, 27), 1052],
-  [DateTime.new(2016, 6, 28), 905],
-  [DateTime.new(2016, 6, 28), 399],
+  [DateTime.new(2016, 6, 22), 3205, 1],
+  [DateTime.new(2016, 6, 22), 1200, 2],
+  [DateTime.new(2016, 6, 22), 200, 3],
+  [DateTime.new(2016, 6, 23), 2400, 4],
+  [DateTime.new(2016, 6, 24), 1200, 5],
+  [DateTime.new(2016, 6, 25), 250, 6],
+  [DateTime.new(2016, 6, 26), 470, 2],
+  [DateTime.new(2016, 6, 26), 409, 8],
+  [DateTime.new(2016, 6, 26), 500, 9],
+  [DateTime.new(2016, 6, 27), 550, 11],
+  [DateTime.new(2016, 6, 27), 1052, 2],
+  [DateTime.new(2016, 6, 28), 905, 4],
+  [DateTime.new(2016, 6, 28), 399, 10],
 ]
 
-expense_items.each do |date, amount|
-  ExpenseItem.create(date: date, amount: amount)
+expense_items.each do |date, amount, source|
+  ExpenseItem.create(date: date, amount: amount, expense_source_id: source)
 end
 
 p "Created #{ExpenseItem.count} expense items."
@@ -88,13 +88,13 @@ p "Created #{ExpenseItem.count} expense items."
 IncomeItem.destroy_all
 
 income_items = [
-  [DateTime.new(2016, 6, 12), 100000],
-  [DateTime.new(2016, 6, 18), 400000],
-  [DateTime.new(2016, 6, 25), 50000],
+  [DateTime.new(2016, 6, 12), 100000, 1],
+  [DateTime.new(2016, 6, 18), 400000, 1],
+  [DateTime.new(2016, 6, 25), 50000, 2],
 ]
 
-income_items.each do |date, amount|
-  IncomeItem.create(date: date, amount: amount)
+income_items.each do |date, amount, source|
+  IncomeItem.create(date: date, amount: amount, income_source_id: source)
 end
 
 p "Created #{IncomeItem.count} income items."
