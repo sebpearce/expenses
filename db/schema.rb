@@ -10,13 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716024713) do
+ActiveRecord::Schema.define(version: 20160716034335) do
+
+  create_table "expense_items", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "amount"
+    t.text     "description"
+    t.integer  "expense_source_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["expense_source_id"], name: "index_expense_items_on_expense_source_id"
+  end
 
   create_table "expense_sources", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_expense_sources_on_name", unique: true
+  end
+
+  create_table "income_items", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "amount"
+    t.text     "description"
+    t.integer  "income_source_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["income_source_id"], name: "index_income_items_on_income_source_id"
   end
 
   create_table "income_sources", force: :cascade do |t|
