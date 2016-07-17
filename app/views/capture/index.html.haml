@@ -1,1 +1,7 @@
 %h1 Capture controller #index.
+
+-# - @expense_sources.each do |src|
+  -# = react_component 'ExpenseSource', name: src[:name], id: src[:id]
+
+-# We don't want to pass in props here, because then we can't use serialiser for custom json!
+= react_component 'CaptureApp', props: { expenseSources: @expense_sources }
