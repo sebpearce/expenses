@@ -1,11 +1,11 @@
-//= require ./expense_source.es6.jsx
+//= require ./expense_sources.es6.jsx
 
 class CaptureApp extends React.Component {
 
   constructor (props) {
     super(props);
     this.state = {
-      data: [],
+      expenseSources: [],
     };
   }
 
@@ -16,7 +16,7 @@ class CaptureApp extends React.Component {
       url: source,
       dataType: 'json',
       success: (data) => {
-        this.setState({data: data});
+        this.setState({expenseSources: data});
       },
       error: (xhr, status, err) => {
         console.error(source, status, err.toString());
@@ -34,7 +34,7 @@ class CaptureApp extends React.Component {
     return (
       <div>
         <p>CaptureApp</p>
-        <ExpenseSource data={this.state.data} />
+        <ExpenseSources expenseSources={this.state.expenseSources} />
       </div>
     );
   }
