@@ -1,21 +1,20 @@
-class ExpenseSources extends React.Component {
+class IncomeSources extends React.Component {
   render () {
-
-    var expenseSourceRows = this.props.expenseSources.map((row) => {
+    var incomeSourceRows = this.props.incomeSources.map((row) => {
       return (
-        <div className="expenseSourceItem" key={row.id}>Name: {row.name}, Id: {row.id}</div>
+        <div className="incomeSourceItem" key={row.id}>Name: {row.name}, Id: {row.id}</div>
       );
-    })
+    });
 
     return (
-      <div className="expenseSources">
-        {expenseSourceRows}
+      <div className="incomeSources">
+        {incomeSourceRows}
       </div>
     );
   }
 }
 
-ExpenseSources.propTypes = {
+IncomeSources.propTypes = {
   name: React.PropTypes.string,
   id: React.PropTypes.node
 };

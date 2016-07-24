@@ -46,6 +46,8 @@ class CaptureApp extends React.Component {
       <div>
         <p>CaptureApp</p>
         <ExpenseSources expenseSources={this.state.expenseSources} />
+        <br />
+        <IncomeSources incomeSources={this.state.incomeSources} />
       </div>
     );
   }
