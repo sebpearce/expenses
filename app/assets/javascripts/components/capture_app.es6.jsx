@@ -1,5 +1,3 @@
-//= require ./expense_sources.es6.jsx
-
 class CaptureApp extends React.Component {
 
   constructor (props) {
@@ -48,6 +46,10 @@ class CaptureApp extends React.Component {
         <ExpenseSources expenseSources={this.state.expenseSources} />
         <br />
         <IncomeSources incomeSources={this.state.incomeSources} />
+        <br />
+        <ExpenseItems expenseItems={this.state.expenseItems} />
+        <br />
+        <IncomeItems incomeItems={this.state.incomeItems} />
       </div>
     );
   }
