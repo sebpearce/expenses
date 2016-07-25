@@ -40,7 +40,7 @@ class CaptureJsonController < ApplicationController
       date: el.date,
       amt: el.amount,
       desc: el.description,
-      src: el.source_id,
+      src: el.source.id,
     }
     end
   end
