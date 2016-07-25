@@ -53,7 +53,7 @@ p "Created #{ExpenseSource.count} expense sources."
   [DateTime.new(2016, 6, 28), 905, @expense_sources.sample],
   [DateTime.new(2016, 6, 28), 399, @expense_sources.sample],
 ].map do |date, amount, source|
-  ExpenseItem.create(date: date, amount: amount, expense_source: source)
+  ExpenseItem.create(date: date, amount: amount, expense_source_id: source)
 end
 
 p "Created #{ExpenseItem.count} expense items."
@@ -79,7 +79,7 @@ p "Created #{IncomeSource.count} income sources."
   [DateTime.new(2016, 6, 18), 400000, @income_sources.sample],
   [DateTime.new(2016, 6, 25), 50000, @income_sources.sample],
 ].map do |date, amount, source|
-  IncomeItem.create(date: date, amount: amount, income_source: source)
+  IncomeItem.create(date: date, amount: amount, income_source_id: source)
 end
 
 p "Created #{IncomeItem.count} income items."
