@@ -8,9 +8,6 @@
 
 # Expense Sources
 
-# If you run rake db:setup, it will drop existing db, and create a new one, no need to explicitly destroy anything
-# ExpenseSource.destroy_all
-
 expense_sources = [
   'Rent',
   'Gas',
@@ -42,8 +39,6 @@ p "Created #{ExpenseSource.count} expense sources."
 
 # Income Sources
 
-IncomeSource.destroy_all
-
 income_sources = [
   'Job',
   'Partner\'s job',
@@ -59,8 +54,6 @@ end
 p "Created #{IncomeSource.count} income sources."
 
 # Expense Items
-
-ExpenseItem.destroy_all
 
 expense_items = [
   [DateTime.new(2016, 6, 22), 3205, 1],
@@ -85,8 +78,6 @@ end
 p "Created #{ExpenseItem.count} expense items."
 
 # Income Items
-
-IncomeItem.destroy_all
 
 income_items = [
   [DateTime.new(2016, 6, 12), 100000, 1],
