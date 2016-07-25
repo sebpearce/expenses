@@ -8,7 +8,8 @@
 
 # Expense Sources
 
-ExpenseSource.destroy_all
+# If you run rake db:setup, it will drop existing db, and create a new one, no need to explicitly destroy anything
+# ExpenseSource.destroy_all
 
 expense_sources = [
   'Rent',
