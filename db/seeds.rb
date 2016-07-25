@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# EXPENSES
 # Expense Sources
 
-expense_sources = [
+@expense_sources = [
   'Rent',
   'Gas',
   'Water',
@@ -29,64 +30,56 @@ expense_sources = [
   'Donations',
   'One-offs',
   'Other',
-]
-
-expense_sources.each do |expense_source|
+].map do |expense_source|
   ExpenseSource.create(name: expense_source)
 end
 
 p "Created #{ExpenseSource.count} expense sources."
 
+# Expense Items
+
+@expense_items = [
+  [DateTime.new(2016, 6, 22), 3205, @expense_sources.sample],
+  [DateTime.new(2016, 6, 22), 1200, @expense_sources.sample],
+  [DateTime.new(2016, 6, 22), 200, @expense_sources.sample],
+  [DateTime.new(2016, 6, 23), 2400, @expense_sources.sample],
+  [DateTime.new(2016, 6, 24), 1200, @expense_sources.sample],
+  [DateTime.new(2016, 6, 25), 250, @expense_sources.sample],
+  [DateTime.new(2016, 6, 26), 470, @expense_sources.sample],
+  [DateTime.new(2016, 6, 26), 409, @expense_sources.sample],
+  [DateTime.new(2016, 6, 26), 500, @expense_sources.sample],
+  [DateTime.new(2016, 6, 27), 550, @expense_sources.sample],
+  [DateTime.new(2016, 6, 27), 1052, @expense_sources.sample],
+  [DateTime.new(2016, 6, 28), 905, @expense_sources.sample],
+  [DateTime.new(2016, 6, 28), 399, @expense_sources.sample],
+].map do |date, amount, source|
+  ExpenseItem.create(date: date, amount: amount, expense_source: source)
+end
+
+p "Created #{ExpenseItem.count} expense items."
+
 # Income Sources
 
-income_sources = [
+@income_sources = [
   'Job',
   'Partner\'s job',
   'Gifts',
   'Tax return',
   'Other',
-]
-
-income_sources.each do |income_source|
+].map do |income_source|
   IncomeSource.create(name: income_source)
 end
 
 p "Created #{IncomeSource.count} income sources."
 
-# Expense Items
-
-expense_items = [
-  [DateTime.new(2016, 6, 22), 3205, 1],
-  [DateTime.new(2016, 6, 22), 1200, 2],
-  [DateTime.new(2016, 6, 22), 200, 3],
-  [DateTime.new(2016, 6, 23), 2400, 4],
-  [DateTime.new(2016, 6, 24), 1200, 5],
-  [DateTime.new(2016, 6, 25), 250, 6],
-  [DateTime.new(2016, 6, 26), 470, 2],
-  [DateTime.new(2016, 6, 26), 409, 8],
-  [DateTime.new(2016, 6, 26), 500, 9],
-  [DateTime.new(2016, 6, 27), 550, 11],
-  [DateTime.new(2016, 6, 27), 1052, 2],
-  [DateTime.new(2016, 6, 28), 905, 4],
-  [DateTime.new(2016, 6, 28), 399, 10],
-]
-
-expense_items.each do |date, amount, source|
-  ExpenseItem.create(date: date, amount: amount, expense_source_id: source)
-end
-
-p "Created #{ExpenseItem.count} expense items."
-
 # Income Items
 
-income_items = [
-  [DateTime.new(2016, 6, 12), 100000, 1],
-  [DateTime.new(2016, 6, 18), 400000, 1],
-  [DateTime.new(2016, 6, 25), 50000, 2],
-]
-
-income_items.each do |date, amount, source|
-  IncomeItem.create(date: date, amount: amount, income_source_id: source)
+@income_items = [
+  [DateTime.new(2016, 6, 12), 100000, @income_sources.sample],
+  [DateTime.new(2016, 6, 18), 400000, @income_sources.sample],
+  [DateTime.new(2016, 6, 25), 50000, @income_sources.sample],
+].map do |date, amount, source|
+  IncomeItem.create(date: date, amount: amount, income_source: source)
 end
 
 p "Created #{IncomeItem.count} income items."
