@@ -25,12 +25,11 @@ class CaptureJsonController < ApplicationController
   end
 
   def format_sources_as_json(query)
-    query.to_a.map do |el|
-      {
-        id: el.id,
-        name: el.name,
-      }
+    res = {}
+    query.to_a.each do |el|
+      res[el.id] = el.name
     end
+    res
   end
 
   def format_items_as_json(query)
