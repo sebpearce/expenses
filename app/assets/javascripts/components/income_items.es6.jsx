@@ -1,9 +1,12 @@
 class IncomeItems extends React.Component {
   render () {
 
-    var incomeItemRows = this.props.incomeItems.map((row) => {
+    const incitms = this.props.incomeItems;
+
+    const incomeItemRows = Object.keys(incitms).map((id) => {
+      const row = incitms[id];
       return (
-        <tr className="incomeItemRow" key={row.id}>
+        <tr className="incomeItemRow" key={id}>
           <td className="incomeItem__date">{row.date}</td>
           <td className="incomeItem__amt">{row.amt}</td>
           <td className="incomeItem__desc">{row.desc}</td>

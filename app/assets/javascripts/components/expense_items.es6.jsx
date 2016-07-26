@@ -1,9 +1,12 @@
 class ExpenseItems extends React.Component {
   render () {
 
-    var expenseItemRows = this.props.expenseItems.map((row) => {
+    const expitms = this.props.expenseItems;
+
+    const expenseItemRows = Object.keys(expitms).map((id) => {
+      const row = expitms[id];
       return (
-        <tr className="expenseItemRow" key={row.id}>
+        <tr className="expenseItemRow" key={id}>
           <td className="expenseItem__date">{row.date}</td>
           <td className="expenseItem__amt">{row.amt}</td>
           <td className="expenseItem__desc">{row.desc}</td>

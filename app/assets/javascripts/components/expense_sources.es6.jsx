@@ -1,9 +1,11 @@
 class ExpenseSources extends React.Component {
   render () {
 
-    var expenseSourceRows = this.props.expenseSources.map((row) => {
+    const expsrc = this.props.expenseSources;
+    const expenseSourceRows = Object.keys(expsrc).map((id) => {
+      const name = expsrc[id];
       return (
-        <div className="expenseSourceItem" key={row.id}>Name: {row.name}, Id: {row.id}</div>
+        <div className="expenseSourceItem" key={id}>Name: {name}, Id: {id}</div>
       );
     })
 
