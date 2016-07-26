@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root 'dashboard#index'
 
   get '/capture', to: 'capture#index'
-  get '/capturejson', to: 'capture_json#index'
 
   resources :expense_sources
   resources :income_sources

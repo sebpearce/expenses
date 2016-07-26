@@ -13,7 +13,7 @@ class CaptureApp extends React.Component {
   }
 
   loadDataFromServer () {
-    const source = 'http://localhost:3000/capturejson';
+    const source = 'http://localhost:3000/capture.json';
 
     $.ajax({
       url: source,
